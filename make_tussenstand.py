@@ -84,12 +84,10 @@ for klasse, race_cols in KLASSEN.items():
         for c, m in enumerate(deel[r-1][4]):
             if not m:
                 st.append(("TEXTCOLOR", (4+c, r), (4+c, r), colors.grey))
-        if sloep == "Twirre":
-            st.append(("BACKGROUND", (0, r), (-1, r), colors.HexColor("#fff3c4")))
     t.setStyle(TableStyle(st))
     doc.build([Paragraph(f"Tussenstand Friese {klasse.lower()}sloepen 2026 — beste {BESTE} wedstrijden", title_style),
                Paragraph(uitleg, sub_style), Spacer(1, 4*mm), t,
-               Paragraph("Niet officieel; Friese selectie samengesteld op basis van sloeproeien.nl en opgave van de gebruiker. Twirre gemarkeerd.", note_style)])
+               Paragraph("Niet officieel; Friese selectie samengesteld op basis van sloeproeien.nl en opgave van de gebruiker.", note_style)])
     # Excel
     wb = openpyxl.Workbook(); ws = wb.active; ws.title = f"Tussenstand {klasse}"
     ws.append(["#", "Sloep", "Vereniging", "Plaats"] + namen + [f"Beste {BESTE}"])
