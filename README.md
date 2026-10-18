@@ -1,7 +1,7 @@
 # Friese uitslagen 2026 — hoe dit werkt
 
-Deze map bevat de gefilterde ("alleen Friese teams") uitslagen van drie sloeproeiwedstrijden
-in 2026 (HKS, Grouster Roeisloepenrace, IFK Lemmer), plus twee puntentabellen (heren en dames)
+Deze map bevat de gefilterde ("alleen Friese teams") uitslagen van vijf sloeproeiwedstrijden
+in 2026 (HKS, Grouster Roeisloepenrace, IFK Lemmer, Slag om Makkum, SloepRoeienLangweer), plus twee puntentabellen (heren en dames)
 die de resultaten van die drie wedstrijden combineren tot een puntenklassement
 (1e = 0,9 punt, 2e = 2 punten, elke volgende plaats 1 punt meer, minste punten bovenaan).
 
@@ -10,6 +10,8 @@ die de resultaten van die drie wedstrijden combineren tot een puntenklassement
 - `HKS 2026 - Dames/Heren - Friese teams.pdf`
 - `Grou 2026 - Dames/Heren - Friese teams.pdf`
 - `IFK Lemmer 2026 - Dames/Heren - Friese teams.pdf`
+- `Slag om Makkum 2026 - Dames/Heren - Friese teams.pdf`
+- `SloepRoeienLangweer 2026 - Dames/Heren - Friese teams.pdf`
 - `Punten totaal - Friese herensloepen.pdf` + `.xlsx`
 - `Punten totaal - Friese damessloepen.pdf` + `.xlsx` + `.ods`
 - `scripts/` — de Python-scripts die al het bovenstaande genereren

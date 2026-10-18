@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from make_friese_uitslagen import HKS_HEREN, GROU_HEREN, LEMMER_HEREN, FRIES, frisian_ranking, OUT_DIR
+from make_friese_uitslagen import HKS_HEREN, GROU_HEREN, LEMMER_HEREN, MAKKUM_HEREN, LANGWEER_HEREN, FRIES, frisian_ranking, OUT_DIR
 
 import openpyxl
 from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
@@ -11,6 +11,8 @@ RACE_COLS = [
     ("HKS", HKS_HEREN),
     ("Grou", GROU_HEREN),
     ("IFK Lemmer", LEMMER_HEREN),
+    ("Slag om Makkum", MAKKUM_HEREN),
+    ("Langweer", LANGWEER_HEREN),
 ]
 
 punten_per_sloep = {}
@@ -63,7 +65,7 @@ for r in range(2, last_row + 1):
         if c == len(header):
             cell.font = bold
 
-col_widths = [24, 34, 20, 10, 10, 12, 10]
+col_widths = [24, 34, 20, 10, 10, 12, 14, 12, 10]
 for i, w in enumerate(col_widths, start=1):
     ws.column_dimensions[get_column_letter(i)].width = w
 

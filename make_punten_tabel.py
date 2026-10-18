@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, sys
 sys.path.insert(0, os.path.dirname(__file__))
-from make_friese_uitslagen import HKS_HEREN, GROU_HEREN, LEMMER_HEREN, FRIES, frisian_ranking, OUT_DIR
+from make_friese_uitslagen import HKS_HEREN, GROU_HEREN, LEMMER_HEREN, MAKKUM_HEREN, LANGWEER_HEREN, FRIES, frisian_ranking, OUT_DIR
 
 from reportlab.lib.pagesizes import A4, landscape
 from reportlab.lib import colors
@@ -13,6 +13,8 @@ RACE_COLS = [
     ("HKS", HKS_HEREN),
     ("Grou", GROU_HEREN),
     ("IFK Lemmer", LEMMER_HEREN),
+    ("Slag om Makkum", MAKKUM_HEREN),
+    ("Langweer", LANGWEER_HEREN),
 ]
 
 # sloep -> {racenaam: punten (float) of None (deelgenomen maar niet gefinisht/gestart)}
@@ -66,7 +68,7 @@ data = [header]
 for sloep, vereniging, plaats, waarden, totaal in rows_out:
     data.append([sloep, vereniging, plaats] + [fmt(v) for v in waarden] + [fmt(totaal)])
 
-col_widths = [34*mm, 55*mm, 30*mm, 20*mm, 20*mm, 26*mm, 20*mm]
+col_widths = [34*mm, 55*mm, 30*mm, 20*mm, 20*mm, 26*mm, 28*mm, 22*mm, 20*mm]
 t = Table(data, colWidths=col_widths, repeatRows=1)
 t.setStyle(TableStyle([
     ("FONTSIZE", (0,0), (-1,-1), 8),
@@ -84,7 +86,7 @@ elems.append(t)
 
 elems.append(Paragraph(
     "Zelfde Friese-teamselectie als in de afzonderlijke uitslagen per wedstrijd (HKS 2026, Grouster "
-    "Roeisloepenrace 2026, Lemmer Iepen Frysk Kampioenskip 2026), klasse Heren.",
+    "Roeisloepenrace 2026, Lemmer Iepen Frysk Kampioenskip 2026, Slag om Makkum 2026, SloepRoeienLangweer 2026), klasse Heren.",
     note_style))
 
 doc.build(elems)
